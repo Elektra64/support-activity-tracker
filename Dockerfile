@@ -35,6 +35,13 @@ COPY . .
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/storage
 
-# Expose port 80 and start php-fpm server
+# Copy nginx and supervisor configs
+COPY nginx.conf /etc/nginx/sites-available/default
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Expose HTTP port
 EXPOSE 80
-CMD ["php-fpm"]
+
+# Start Nginx and PHP-FPM via Supervisor
+CMD ["/usr/bin/supervisord"]
+
