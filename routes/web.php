@@ -51,6 +51,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/users/{id}', [AdminController::class, 'destroy'])->name('admin.users.delete');
     Route::post('/admin/users/{user}/assign-activity', [AdminController::class, 'assignActivity'])->name('admin.users.assignActivity');
 
+    Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
+
 });
 
 require __DIR__.'/auth.php';
