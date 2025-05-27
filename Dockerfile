@@ -35,6 +35,6 @@ COPY . .
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/storage
 
-# Expose port 9000 and start php-fpm server
-EXPOSE 9000
+# Expose port 80 and start php-fpm server
+EXPOSE 80
 CMD ["php-fpm"]

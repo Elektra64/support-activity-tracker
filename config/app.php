@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -53,6 +52,8 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+
+    'port' => env('PORT', '8000'),
 
     /*
     |--------------------------------------------------------------------------
@@ -122,5 +123,4 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
-
 ];
